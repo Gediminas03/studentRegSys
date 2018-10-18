@@ -1,2 +1,3 @@
 # studentRegSys
-Software Eng assignment
+Student Registartion System
+Software Eng assignment 1
