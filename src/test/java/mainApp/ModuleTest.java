@@ -18,15 +18,14 @@ public class ModuleTest {
 
     @Test
     public void getName() {
-        module = new Module("EE453", student);
-        assertEquals("EE453", module.getName());
+        module = new Module("Electomagnetics","EE453");
+        assertEquals("Electomagnetics", module.getName());
     }
 
     @Test
-    public void getStudent() {
-        module = new Module("EE453", student);
-        boolean studentCheck = student.equals(module.getStudent());
-        assertTrue("Array content is same:", studentCheck);
+    public void getCode() {
+        module = new Module("Electomagnetics","EE453");
+        assertEquals("EE453", module.getCode());
     }
 
 }

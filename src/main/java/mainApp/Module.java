@@ -12,19 +12,19 @@ package mainApp;
 public class Module {
 
     String Name;
-    Student student;
+    String code;
 
-    public Module(String name, Student student) {
+    public Module(String name, String code) {
         Name = name;
-        this.student = student;
+        this.code = code;
     }
 
     public String getName() {
         return Name;
     }
 
-    public Student getStudent() {
-        return student;
+    public String getCode() {
+        return code;
     }
 
 }

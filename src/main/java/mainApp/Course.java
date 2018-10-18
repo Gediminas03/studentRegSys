@@ -15,13 +15,11 @@ import org.joda.time.LocalDate;
 public class Course {
 
     String Name;
-    Student student;
     LocalDate startDate;
     LocalDate endDate;
 
-    public Course(String name, Student student, LocalDate startDate, LocalDate endDate) {
+    public Course(String name, LocalDate startDate, LocalDate endDate) {
         Name = name;
-        this.student = student;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -38,8 +36,5 @@ public class Course {
         return endDate;
     }
 
-    public Student getStudent() {
-        return student;
-    }
 
 }
