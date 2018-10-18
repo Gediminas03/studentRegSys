@@ -16,14 +16,12 @@ public class Course {
 
     String Name;
     Student student;
-    Module module;
     LocalDate startDate;
     LocalDate endDate;
 
-    public Course(String name, Student student, Module module, LocalDate startDate, LocalDate endDate) {
+    public Course(String name, Student student, LocalDate startDate, LocalDate endDate) {
         Name = name;
         this.student = student;
-        this.module = module;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -44,7 +42,4 @@ public class Course {
         return student;
     }
 
-    public Module getModule() {
-        return module;
-    }
 }

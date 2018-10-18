@@ -22,25 +22,25 @@ public class CourseTest {
 
     @Test
     public void getName() {
-        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, dateStart, dateFinish);
         assertEquals("Electronic and Computer Eng", course.getName());
     }
 
     @Test
     public void getStartDate() {
-        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, dateStart, dateFinish);
         assertEquals("2015-09-01", course.getStartDate().toString());
     }
 
     @Test
     public void getEndDate() {
-        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, dateStart, dateFinish);
         assertEquals("2019-08-31", course.getEndDate().toString());
     }
 
     @Test
     public void getStudent() {
-        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, dateStart, dateFinish);
         boolean studentCheck = student.equals(module.getStudent());
         assertTrue("Array content is same:", studentCheck);
     }
