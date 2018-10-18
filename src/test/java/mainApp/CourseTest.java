@@ -44,4 +44,8 @@ public class CourseTest {
         boolean studentCheck = student.equals(module.getStudent());
         assertTrue("Array content is same:", studentCheck);
     }
+
+    public Module getModule() {
+        return module;
+    }
 }
