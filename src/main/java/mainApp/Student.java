@@ -10,48 +10,38 @@ package mainApp;
 // A specific method (getUsername()) will generate the student’s username by
 //concatenating their name and age.
 
-import java.util.List;
+import org.joda.time.LocalDate;
+import org.joda.time.Years;
 
 public class Student {
     String Name;
     int Age;
-    String DOB;
+    LocalDate DOB;
     int ID;
-    String Username;
-    List<String> modules;
-    List<String> courses;
+    LocalDate now = LocalDate.now();
 
-    public Student(String name, int age, String DOB, int ID, String username, List<String> module, List<String> courses) {
+    public Student(String name, LocalDate DOB, int ID) {
         Name = name;
-        Age = age;
         this.DOB = DOB;
         this.ID = ID;
-        Username = username;
-        this.modules = module;
-        this.courses = courses;
-    }
-
-    public List<String> getModule() {
-        return modules;
-    }
-
-    public List<String> getCourses() {
-        return courses;
     }
 
     public int getAge() {
+        Years age = Years.yearsBetween(DOB, now);
+        Age = age.getYears();
         return Age;
     }
 
     public String getUsername() {
-        return Username.concat(Integer.toString(Age));
+
+        return Name.concat(Integer.toString(getAge()));
     }
 
     public String getName() {
         return Name;
     }
 
-    public String getDOB() {
+    public LocalDate getDOB() {
         return DOB;
     }
 

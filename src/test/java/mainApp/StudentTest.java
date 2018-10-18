@@ -5,65 +5,46 @@ package mainApp;
                  ECE
 */
 
+import org.joda.time.LocalDate;
 import org.junit.Test;
-
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class StudentTest {
 
-    List<String> courseECE = Arrays.asList("ECE");
-    List<String> courseCSIT = Arrays.asList("CSIT");
-    List<String> modulesListECE = Arrays.asList("EE350", "EE450", "EE453", "CT434", "CT420");
-    List<String> modulesListCSIT = Arrays.asList("CT434", "CT420", "CT436", "CT421");
+    LocalDate DOB;
 
     Student student;
 
 
     @Test
-    public void getUsername() {
-        student = new Student("Daniel", 21, "19/02/1997",14102368, "Danie", modulesListECE, courseECE);
-        assertEquals("Danie21", student.getUsername());
+    public void getName() {
+        student = new Student("Victoria", DOB = new LocalDate(1997, 2, 19),14102368);
+        assertEquals("Victoria", student.getName());
     }
+
 
     @Test
     public void getAge() {
-        student = new Student("Daniel", 21, "19/02/1997",14102368, "Danie", modulesListECE, courseECE);
+        student = new Student("Victoria", DOB = new LocalDate(1997, 2, 19),14102368);
         assertEquals(21, student.getAge());
     }
 
     @Test
-    public void getName() {
-        student = new Student("Victoria", 25, "19/02/1993",15102354, "Vici", modulesListCSIT, courseCSIT);
-        assertEquals("Victoria", student.getName());
-    }
-
-    @Test
-    public void getCourses() {
-        student = new Student("Victoria", 25, "19/02/1993",15102354, "Vici", modulesListCSIT, courseCSIT);
-        boolean studentCourseCheck = courseCSIT.equals(student.getCourses());
-        assertTrue("Array content is same:", studentCourseCheck);
-    }
-
-    @Test
-    public void getModules() {
-        student = new Student("Victoria", 25, "19/02/1993",15102354, "Vici", modulesListCSIT, courseCSIT);
-        boolean studentModuleCheck = modulesListCSIT.equals(student.getModule());
-        assertTrue("Array content is same:", studentModuleCheck);
+    public void getUsername() {
+        student = new Student("Victoria", DOB = new LocalDate(1997, 2, 19),14102368);
+        assertEquals("Victoria21", student.getUsername());
     }
 
     @Test
     public void getDOB() {
-        student = new Student("Daniel", 21, "19/02/1997",14102368, "Danie", modulesListECE, courseECE);
-        assertEquals("19/02/1997", student.getDOB());
+        student = new Student("Victoria", DOB = new LocalDate(1997, 2, 19),14102368);
+        assertEquals("1997-02-19", student.getDOB().toString());
     }
 
     @Test
     public void getID() {
-        student = new Student("Victoria", 25, "19/02/1993",15102354, "Vici", modulesListCSIT, courseCSIT);
-        assertEquals(15102354, student.getID());
+        student = new Student("Victoria", DOB = new LocalDate(1997, 2, 19),14102368);
+        assertEquals(14102368, student.getID());
     }
 }

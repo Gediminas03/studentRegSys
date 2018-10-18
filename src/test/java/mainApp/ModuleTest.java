@@ -5,36 +5,28 @@ package mainApp;
                  ECE
 */
 
+import org.joda.time.LocalDate;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class ModuleTest {
 
-    List<String> studentNames = Arrays.asList("Daniel Kenny", "Enda Scully", "Gabriela Diohrte", "Lara Croft", "Pavel Lang");
-    List<String> courseECE = Arrays.asList("ECE");
+    LocalDate DOB;
+    Student student = new Student("Victoria",DOB = new LocalDate(1997, 2, 19),14102368);
     Module module;
 
     @Test
     public void getName() {
-        module = new Module("EE453",studentNames, courseECE);
+        module = new Module("EE453", student);
         assertEquals("EE453", module.getName());
     }
 
     @Test
     public void getStudent() {
-        module = new Module("EE453",studentNames, courseECE);
-        boolean studentModuleCheck = studentNames.equals(module.getStudent());
-        assertTrue("Array content is same:", studentModuleCheck);
+        module = new Module("EE453", student);
+        boolean studentCheck = student.equals(module.getStudent());
+        assertTrue("Array content is same:", studentCheck);
     }
 
-    @Test
-    public void getCourse() {
-        module = new Module("EE453",studentNames, courseECE);
-        boolean studentCourseCheck = studentNames.equals(module.getCourse());
-        assertTrue("Array content is same:", studentCourseCheck);
-    }
 }

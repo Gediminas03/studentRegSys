@@ -6,19 +6,15 @@ package mainApp;
 */
 
 import org.joda.time.LocalDate;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class CourseTest {
 
-    List<String> studentNames = Arrays.asList("Daniel Kenny", "Enda Scully", "Gabriela Diohrte", "Lara Croft", "Pavel Lang");
-    List<String> courseECE = Arrays.asList("ECE");
-    List<String> courseCSIT = Arrays.asList("CSIT");
+    LocalDate DOB;
+    Student student = new Student("Victoria",DOB = new LocalDate(1997, 2, 19),14102368);
+    Module module = new Module("EE453", student);
     LocalDate dateStart = new LocalDate(2015, 9, 1);
     LocalDate dateFinish = new LocalDate(2019, 8, 31);
 
@@ -26,33 +22,26 @@ public class CourseTest {
 
     @Test
     public void getName() {
-        course = new Course("Electronic and Computer Eng",courseECE, studentNames, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
         assertEquals("Electronic and Computer Eng", course.getName());
     }
 
     @Test
-    public void getCourse() {
-        course = new Course("Electronic and Computer Eng",courseECE, studentNames, dateStart, dateFinish);
-        boolean courseCheck = courseECE.equals(course.getCourse());
-        assertTrue("Array content is same:", courseCheck);
-    }
-
-    @Test
-    public void getStudentName() {
-        course = new Course("Computer Science and IT",courseCSIT, studentNames, dateStart, dateFinish);
-        boolean studentCheck = courseCSIT.equals(course.getCourse());
-        assertTrue("Array content is same:", studentCheck);
-    }
-
-    @Test
     public void getStartDate() {
-        course = new Course("Computer Science and IT",courseCSIT, studentNames, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
         assertEquals("2015-09-01", course.getStartDate().toString());
     }
 
     @Test
     public void getEndDate() {
-        course = new Course("Computer Science and IT",courseCSIT, studentNames, dateStart, dateFinish);
+        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
         assertEquals("2019-08-31", course.getEndDate().toString());
+    }
+
+    @Test
+    public void getStudent() {
+        course = new Course("Electronic and Computer Eng", student, module, dateStart, dateFinish);
+        boolean studentCheck = student.equals(module.getStudent());
+        assertTrue("Array content is same:", studentCheck);
     }
 }

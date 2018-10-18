@@ -12,20 +12,18 @@ package mainApp;
 
 import org.joda.time.LocalDate;
 
-import java.util.List;
-
 public class Course {
 
-    java.lang.String Name;
-    List<String> course;
-    List<String> studentName;
+    String Name;
+    Student student;
+    Module module;
     LocalDate startDate;
     LocalDate endDate;
 
-    public Course(String name, List<String> course, List<String> studentName, LocalDate startDate, LocalDate endDate) {
+    public Course(String name, Student student, Module module, LocalDate startDate, LocalDate endDate) {
         Name = name;
-        this.course = course;
-        this.studentName = studentName;
+        this.student = student;
+        this.module = module;
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -34,19 +32,15 @@ public class Course {
         return Name;
     }
 
-    public List<String> getCourse() {
-        return course;
-    }
-
-    public List<String> getStudentName() {
-        return studentName;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
 
     public LocalDate getEndDate() {
         return endDate;
+    }
+
+    public Student getStudent() {
+        return student;
     }
 }
