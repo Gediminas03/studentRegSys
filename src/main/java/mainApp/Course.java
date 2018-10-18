@@ -43,4 +43,8 @@ public class Course {
     public Student getStudent() {
         return student;
     }
+
+    public Module getModule() {
+        return module;
+    }
 }

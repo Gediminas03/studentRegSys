@@ -45,7 +45,4 @@ public class CourseTest {
         assertTrue("Array content is same:", studentCheck);
     }
 
-    public Module getModule() {
-        return module;
-    }
 }
